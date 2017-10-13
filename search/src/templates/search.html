@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Search People</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<h1>Search people</h1>
+<h2>Select a skill and click search to get a list of matching people.</h2>
+
+<div class="container page-form">
+    <form id="login-form" action="/search/skill" method="post">
+        <div class="form-group">
+            <label for="Skill">Skill</label>
+            <input type="text" id="Skill" class="form-control" name="Skill">
+        </div>
+
+        <button type="submit" class="btn btn-success">Search</button>
+    </form>
+</div>
+
+
+
+</body>
+</html>
