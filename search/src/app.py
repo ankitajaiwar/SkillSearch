@@ -27,7 +27,7 @@ def login_user():
 
     # return render_template("search2.html", Skill=session['Skill'])
     # return render_template("search2.html")
-    return render_template("search2.html", results=peopleNames)
+    return render_template("search.html", results=peopleNames)
 
 
 @app.before_first_request
