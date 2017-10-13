@@ -1,0 +1,58 @@
+<!-- author: Ankita Singh-->
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+    <head>
+        <meta charset="UTF-8">
+        <title>SkillSearch Login Form</title>
+
+
+
+
+
+    </head>
+
+    <body bgcolor = "#d6f5d6">
+
+        <h1>Register</h1>
+
+        <div class="form">
+            <dl>  {% from "includes/_formhelpers.html" import render_field %}</dl>
+            <form class="registerform" method = "POST" action="">
+                <div class = "form-group">
+                     <dl> {{render_field(form.fname, class = "form-control")}}</dl>
+                 </div>
+                <div class = "form-group">
+                     <dl> {{render_field(form.lname, class = "form-control")}}</dl>
+                </div>
+                <div class = "form-group">
+                    <dl>{{render_field(form.uname, class = "form-control")}}</dl>
+                </div>
+        <div class = "form-group">
+            <dl> {{render_field(form.email, class = "form-control")}}</dl>
+        </div>
+        <div class = "form-group">
+            <dl> {{render_field(form.password, class = "form-control")}}</dl>
+        </div>
+        <div class = "form-group">
+            <dl> {{render_field(form.confirm, class = "form-control")}}</dl>
+        </div>
+         <div class = "form-group">
+             <dl>  {{render_field(form.university, class = "form-control")}}</dl>
+        </div>
+         <div class = "form-group">
+             <dl> {{render_field(form.department, class = "form-control")}}</dl>
+        </div>
+                <input type = "submit" value = "Submit">
+
+         <p class="message">Already registered? <a href="login.html">Sign In</a></p>
+        </form>
+
+        </div>
+
+    </body>
+</html>
