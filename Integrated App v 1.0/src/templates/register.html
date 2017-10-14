@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <body bgcolor = "#d6f5d6">
+
+    <h1>Register</h1>
+
+        <div class="container page-form">
+            <form id="register-form" action="/register-page" method="post">
+                <div class="form-group">
+                    <label for="First Name">First Name</label>
+                    <input type="text" id="First Name" class="form-control" name="First Name" required>
+                    <label for="Sur Name">Sur Name</label>
+                    <input type="text" id="Sur Name" class="form-control" name="Sur Name">
+                    <label for="Last Name">Last Name</label>
+                    <input type="text" id="Last Name" class="form-control" name="Last Name" required>
+                    <label for="email">email</label>
+                    <input type="email" id="email" class="form-control" name="email" required>
+                    <label for="pwd">password</label>
+                    <input type="password" id="pwd" class="form-control" name="pwd">
+                    <label for="Confirm password">Confirm password</label>
+                    <input type="password" id="Confirm password" class="form-control" name="Confirm password">
+                    <label for="University">University</label>
+                    <input type="text" id="University" class="form-control" name="University">
+                    <label for="Department">Department</label>
+                    <input type="text" id="Department" class="form-control" name="Department">
+                <button type="submit" class="btn btn-success">Register</button>
+                </div>
+            </form>
+        </div>
+
+
+{% endblock %}

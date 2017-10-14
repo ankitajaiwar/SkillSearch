@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<body>
+		<h1>Add skill</h1>
+        <div class="addskill_container">
+            <form id ="addskill_form" action = "/addskill/add" method = "post">
+                <p>Please find a skill to add to your profile </p>
+
+                <input list = "skills" name="skills">
+                    <datalist id = "skills">
+                        <option value = "Music"> Music </option>
+                        <option value = "Art"> Art </option>
+                        <option value = "Dance"> Dance </option>
+                        <option value = "Programming"> Programming </option>
+                        <option value = "Android"> Android app development </option>
+                    </datalist>
+
+                <p>Not found your skill? You can add the skill by typing in the name below</p>
+                Skill:<input type = "text" id="newSkill" name = "newSkill"></input><br><br>
+                <input type = "submit" value = "Submit">
+            </form>
+        </div>
+    <div>
+        <p>{{ msg }}</p>
+    </div>
+	</body>
+
+{% endblock %}
