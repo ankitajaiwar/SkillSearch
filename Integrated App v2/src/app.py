@@ -28,8 +28,7 @@ def login_authentication():
     user_name = request.form['username']
     pwd = request.form['pwd']
 
-    user = User(username=user_name, pwd=pwd)
-    if user.validateUser(user_name=user_name,pwd=pwd):
+    if User.validateUser(user_name=user_name,pwd=pwd):
         print('successful login')
         fName = User.getName(username=user_name)
         session['username'] = fName
@@ -69,16 +68,20 @@ def skillform():
     skill = request.form['skills']
     newSkill = request.form['newSkill']
     message = "no message"
-    if (skill == "") and (newSkill == ""):
-        message = "Failed to add skills"
-    else:
+    if (skill != ""):
+        skillUpdate = skill
         message = "Skills Added"
-
+    elif(newSkill != ""):
+        skillUpdate = newSkill
+        message = "Skills Added"
+    else:
+        message = "Failed to add skills"
+        return render_template("addskill.html", msg=message)
+        
     _name = session['username']
     print(_name)
-    Database.insert(collection="skillset",data={'name':_name,'skill':skill})
+    Database.insert(collection="skillset",data={'name':_name,'skill':skillUpdate})
     return render_template("addskill.html",msg = message)
-
 
 
 @app.route('/searchpeople')
@@ -96,8 +99,8 @@ def skilled_people():
     print("List of people with requested skill:")
     peopleNames = []
     for people in results:
-        peopleNames.append(people['Name'])
-        print(people['Name'])
+        peopleNames.append(people['name'])
+        print(people['name'])
 
     return render_template("search.html", results=peopleNames)
 
