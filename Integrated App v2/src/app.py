@@ -28,8 +28,7 @@ def login_authentication():
     user_name = request.form['username']
     pwd = request.form['pwd']
 
-    user = User(username=user_name, pwd=pwd)
-    if user.validateUser(user_name=user_name,pwd=pwd):
+    if User.validateUser(user_name=user_name,pwd=pwd):
         print('successful login')
         fName = User.getName(username=user_name)
         session['username'] = fName

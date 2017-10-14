@@ -2,11 +2,9 @@ from common.database import Database
 from passlib.hash import sha256_crypt
 
 class User(object):
-    def __init__(self, username, pwd):
-        user_name = username
-        password = pwd
 
-    def validateUser(self, user_name,pwd):
+    @staticmethod
+    def validateUser(user_name,pwd):
         data = Database.find_one(collection="user_profiles",query={'uname':user_name})
         if data is not None:
             hash = data['password']
@@ -15,6 +13,7 @@ class User(object):
 
     @staticmethod
     def getName(username):
+        firstName = 'NO-ONE-FOUND'
         data = Database.find_one(collection="user_profiles", query={'uname': username})
         if data is not None:
             firstName = data['fname']
