@@ -76,7 +76,8 @@ def skillform():
         message = "Skills Added"
     else:
         message = "Failed to add skills"
-
+        return render_template("addskill.html", msg=message)
+        
     _name = session['username']
     print(_name)
     Database.insert(collection="skillset",data={'name':_name,'skill':skillUpdate})
