@@ -68,16 +68,19 @@ def skillform():
     skill = request.form['skills']
     newSkill = request.form['newSkill']
     message = "no message"
-    if (skill == "") and (newSkill == ""):
-        message = "Failed to add skills"
-    else:
+    if (skill != ""):
+        skillUpdate = skill
         message = "Skills Added"
+    elif(newSkill != ""):
+        skillUpdate = newSkill
+        message = "Skills Added"
+    else:
+        message = "Failed to add skills"
 
     _name = session['username']
     print(_name)
-    Database.insert(collection="skillset",data={'name':_name,'skill':skill})
+    Database.insert(collection="skillset",data={'name':_name,'skill':skillUpdate})
     return render_template("addskill.html",msg = message)
-
 
 
 @app.route('/searchpeople')
@@ -95,8 +98,8 @@ def skilled_people():
     print("List of people with requested skill:")
     peopleNames = []
     for people in results:
-        peopleNames.append(people['Name'])
-        print(people['Name'])
+        peopleNames.append(people['name'])
+        print(people['name'])
 
     return render_template("search.html", results=peopleNames)
 
