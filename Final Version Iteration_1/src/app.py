@@ -1,5 +1,3 @@
-# authors: Vignesh_Ankita_Jaswanth_Tejaswini 
-
 from flask import Flask, jsonify, request, render_template, session, redirect, url_for, flash, logging
 from common.database import Database
 from wtforms import Form, StringField, PasswordField, validators
@@ -29,25 +27,26 @@ def login_button():
 def login_authentication():
     user_name = request.form['username']
     pwd = request.form['pwd']
+    message = ""
 
     if User.validateUser(user_name=user_name,pwd=pwd):
-        print('successful login')
+        message = 'Log in Successful'
         fName = User.getName(username=user_name)
         session['username'] = fName
-        return render_template('userhome.html')
+        return render_template('userhome.html', msg = message)
 
     else:
-        print('invalid credentials')
-        return render_template('login.html')
+        message = 'Please Try Again'
+        return render_template('login.html', msg = message)
 
 @app.route('/register_page',methods=['POST'])
 def register_page():
-    fname = request.form['First Name']
-    lname = request.form['Last Name']
+    fname = request.form['FirstName']
+    lname = request.form['LastName']
     uname = request.form['Username']
     email = request.form['email']
     password = sha256_crypt.encrypt(str(request.form['pwd']))
-    confirm = sha256_crypt.encrypt(str(request.form['Confirm password']))
+    confirm = sha256_crypt.encrypt(str(request.form['ConfirmPassword']))
     university = request.form['University']
     department = request.form['Department']
 
@@ -99,17 +98,19 @@ def skilled_people():
     # Searching people in MongoDB for skill = Skill:
     results = Find_People.search_from_mongo(skill=Skill)
     print("List of people with requested skill:")
+    message = "List of people with requested skill:"
     peopleNames = []
     for people in results:
         peopleNames.append(people['name'])
         print(people['name'])
 
-    return render_template("search.html", results=peopleNames)
+    return render_template("search.html", results=peopleNames, msg = message)
 
 @app.route('/logout')
 def log_out():
     session.pop('username',None)
-    return render_template('login.html')
+    message = "Log Out Successful"
+    return render_template('login.html', msg = message)
 
 
 @app.before_first_request
