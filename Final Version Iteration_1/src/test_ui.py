@@ -29,7 +29,7 @@ class FrontEndTest(unittest.TestCase):
         tester = app.test_client(self)
         response = tester.post(
             '/login_auth',
-            data = dict(username = 'jbond', pwd = '007'),
+            data = dict(username = 'test_User1', pwd = 'test'),
             follow_redirects = True
         )
         self.assertIn(b'Log in Successful', response.data)
@@ -39,7 +39,7 @@ class FrontEndTest(unittest.TestCase):
         tester = app.test_client(self)
         response = tester.post(
             '/login_auth',
-            data = dict(username = 'jbond', pwd = '00l'),
+            data = dict(username = 'test_User1', pwd = 'test2'),
             follow_redirects = True
         )
         self.assertIn(b'Please Try Again', response.data)
@@ -49,7 +49,7 @@ class FrontEndTest(unittest.TestCase):
         tester = app.test_client(self)
         tester.post(
             '/login_auth',
-            data = dict(username = 'jbond', pwd = '00l'),
+            data = dict(username = 'test_User1', pwd = 'test2'),
             follow_redirects = True
         )
         response = tester.get('/logout', content_type = 'html/text')
@@ -115,6 +115,11 @@ class FrontEndTest(unittest.TestCase):
     # ensuring adding skills works correctly
     def test_incorrect_addingskill(self):
         tester = app.test_client(self)
+        tester.post(
+            '/login_auth',
+            data = dict(username = 'test_User1', pwd = 'test'),
+            follow_redirects = True
+        )
         response = tester.post(
             '/skilladded',
             data = dict(skills = '', newSkill = ''),
@@ -128,7 +133,7 @@ class FrontEndTest(unittest.TestCase):
         tester = app.test_client(self)
         tester.post(
             '/login_auth',
-            data = dict(username = 'jbond', pwd = '007'),
+            data = dict(username = 'test_User1', pwd = 'test'),
             follow_redirects = True
         )
         tester.get('/addskill', content_type='html/text')
