@@ -11,28 +11,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
       <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="129">
               <caret line="18" column="54" lean-forward="true" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+=======
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#0#102#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="clean.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/clean.py">
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
             <state relative-caret-position="170">
               <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+=======
+            <state relative-caret-position="90">
+              <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
       <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -45,6 +59,8 @@
           </provider>
         </entry>
       </file>
+=======
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
       <file leaf-file-name="find_people.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/find_people.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -58,7 +74,11 @@
       <file leaf-file-name="user.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/user.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
             <state relative-caret-position="136">
+=======
+            <state relative-caret-position="240">
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
               <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
@@ -70,7 +90,11 @@
       <file leaf-file-name="database.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common/database.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
             <state relative-caret-position="425">
+=======
+            <state relative-caret-position="750">
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
               <caret line="25" column="37" lean-forward="false" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
               <folding />
             </state>
@@ -90,6 +114,9 @@
     <findStrings>
       <find>validate</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -114,12 +141,21 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
   <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1386" />
     <option name="height" value="788" />
+=======
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="95" />
+    <option name="y" value="127" />
+    <option name="width" value="1747" />
+    <option name="height" value="893" />
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -152,6 +188,10 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
+=======
+      <pane id="Scratches" />
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
       <pane id="Scope" />
     </panes>
   </component>
@@ -331,6 +371,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
@@ -339,6 +380,16 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.362776" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14794816" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36374408" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -386,8 +437,13 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
         <state relative-caret-position="51">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -396,12 +452,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/clean.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
         <state relative-caret-position="170">
+=======
+        <state relative-caret-position="300">
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
           <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
+=======
+    <entry file="file://$PROJECT_DIR$/src/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
     <entry file="file://$PROJECT_DIR$/src/find_people.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -412,7 +485,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/user.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
         <state relative-caret-position="136">
+=======
+        <state relative-caret-position="240">
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
@@ -422,12 +499,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/common/database.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
         <state relative-caret-position="425">
+=======
+        <state relative-caret-position="750">
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
           <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
     <entry file="file://$PROJECT_DIR$/src/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
@@ -438,6 +520,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
     <entry file="file://$PROJECT_DIR$/src/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -559,12 +643,19 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
     <entry file="file://$USER_HOME$/skill_search/Lib/site-packages/unittest2/result.py" />
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
           <folding />
+=======
+    <entry file="file://$USER_HOME$/skill_search/Lib/site-packages/unittest2/result.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
         </state>
       </provider>
     </entry>
@@ -584,7 +675,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/user.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
         <state relative-caret-position="136">
+=======
+        <state relative-caret-position="240">
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
@@ -594,7 +689,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/common/database.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
         <state relative-caret-position="425">
+=======
+        <state relative-caret-position="750">
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
           <caret line="25" column="37" lean-forward="false" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
           <folding />
         </state>
@@ -602,12 +701,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/clean.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
         <state relative-caret-position="170">
+=======
+        <state relative-caret-position="300">
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
           <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
+=======
+    <entry file="file://$PROJECT_DIR$/src/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
     <entry file="file://$PROJECT_DIR$/src/find_people.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -616,10 +732,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:Integrated App v2/.idea/workspace.xml
         <state relative-caret-position="425">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+=======
+        <state relative-caret-position="540">
+          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+>>>>>>> 88991609335125ab69b3a11a2de8656d98e086f8:Final Version Iteration_1/.idea/workspace.xml
           <folding>
             <element signature="e#0#102#0" expanded="true" />
           </folding>
