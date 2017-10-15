@@ -12,18 +12,23 @@ Pre-requisites:
 1. A Running MongoDB instance in your machine.
 If you are not familiar how to do this, refer this stackoverflow link => https://stackoverflow.com/questions/20796714/how-do-i-start-mongo-db-from-windows
 
-2. A basic command prommpt(in case of Windows) or Terminal(Linux users). If you are not planning to use any of these, you need Python IDE => PyChanrm. Thats where this project developed. 
+2. A basic Command Prommpt(in case of Windows) or Terminal(Linux users). If you are not planning to use any of these, you need a Python IDE like PyCharm. Thats where this app is being developed and tested. 
 
-Compile / Run Instructions:
-1. (optional)Make src/ folder as root folder (do this if you have reference issues).
+Pre-Run Instructions:
+1. Make sure there is an active MongoDB instance. 
 
-2. Windows Users:
-Open Command Prompt, 
+2. Navigate to the project src/ folder in shell. 
+If you are using PyCharm IDE, Load the project files and Make src/ folder as root folder(Right click -> MakeDirectoryas >).
+
 Run Instructions:
+1. Execute the command(without quotes) 'python app.py' 
+You should the local instance address on which app is running. Something like http://127.0.0.1:4995/
 
-Test case Run:
+2. Click on that link or manually copy-paste it in browser.  
+
+
+Unit-test Run:
+python -m unittest test.py
+python -m unittest test_ui.py
 
 Inputs and Outputs: (Acceptance criteria for Iteration 1)
-
-
-
