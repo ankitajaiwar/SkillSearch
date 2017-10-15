@@ -1,11 +1,14 @@
 # SkillSearch
-A web app to search skilled people within university or college campus. 
+A web app to search skilled people within your university or college campus. Here you can create your own user account, Add skills to your Account, Evaluate your skills and get a score and search people with particular skillset.   
 
-WebApp Front-end: Used a combination of Bootstap CDN and HTML 5 / CSS 5.
+### WebApp Front-end: 
+Used a combination of Bootstap CDN and HTML 5 / CSS 5.
 
-WebApp Back-end: Used the Python based Flask framework, with pyhton support classes and MongoDB Database. 
+### WebApp Back-end: 
+Used the Python based Flask framework, with pyhton support classes and MongoDB Database. 
 
-Location of Source codes- Check the "Final Version Iteration_1" folder for full source code developed as part of Iteration 1.
+### Location of Source codes: 
+Check the "Final Version Iteration_1" folder for full source code developed as part of Iteration 1.
 
 
 ## Pre-requisites: 
