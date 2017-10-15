@@ -12,6 +12,8 @@ class CleanDatabase(object):
 
         Database.removeEntry(collection_name="user_profiles", idName="uname", idValue="test_User1")
 
+        Database.removeEntry(collection_name="user_profiles",idName="uname",idValue="iUchiha")
+        
         Database.removeEntry(collection_name="skillset", idName="skill", idValue="test_Java")
 
         print('cleaned..')
