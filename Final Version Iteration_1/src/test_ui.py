@@ -111,6 +111,8 @@ class FrontEndTest(unittest.TestCase):
         self.assertTrue(b'Log Out Successful' in response.data)
 
     """---------------------------------------tests for addskill.html---------------------------------------"""
+
+    # ensuring adding skills works correctly
     def test_incorrect_addingskill(self):
         tester = app.test_client(self)
         response = tester.post(
