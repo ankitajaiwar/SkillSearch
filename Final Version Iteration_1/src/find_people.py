@@ -1,3 +1,4 @@
+# Author: Vigneshwar
 from common.database import Database
 
 class Find_People(object):

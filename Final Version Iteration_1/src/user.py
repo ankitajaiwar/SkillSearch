@@ -1,3 +1,4 @@
+# Author: Ankita, Tejaswini, Vigneshwar
 from common.database import Database
 from passlib.hash import sha256_crypt
 

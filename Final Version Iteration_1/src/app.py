@@ -1,3 +1,5 @@
+# Authors: Vigneshwar, Jaswanth, Ankita, Tejaswini
+
 from flask import Flask, jsonify, request, render_template, session, redirect, url_for, flash, logging
 from common.database import Database
 from wtforms import Form, StringField, PasswordField, validators
