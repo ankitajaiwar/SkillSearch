@@ -134,8 +134,8 @@ def skilled_people():
 def log_out():
     session.pop('username',None)
     message = "Log Out Successful"
-    # return render_template('login.html', msg = message)
-    return redirect(url_for('login_button',msg = message))
+    return render_template('login.html', msg = message)
+    # return redirect(url_for('login_button',msg = message))
 
 
 @app.before_first_request
