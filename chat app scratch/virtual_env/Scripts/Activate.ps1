@@ -27,7 +27,7 @@ function global:deactivate ([switch]$NonDestructive) {
 
 deactivate -nondestructive
 
-$env:VIRTUAL_ENV="C:\Users\Vignesh\software_eng"
+$env:VIRTUAL_ENV="C:\Users\Vignesh\chatapptest"
 
 if (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {
     # Set the prompt to include the env name
@@ -35,7 +35,7 @@ if (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {
     function global:_OLD_VIRTUAL_PROMPT {""}
     copy-item function:prompt function:_OLD_VIRTUAL_PROMPT
     function global:prompt {
-        Write-Host -NoNewline -ForegroundColor Green '(software_eng) '
+        Write-Host -NoNewline -ForegroundColor Green '(chatapptest) '
         _OLD_VIRTUAL_PROMPT
     }
 }

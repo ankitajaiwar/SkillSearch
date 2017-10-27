@@ -1,4 +1,4 @@
-#!C:\Users\Vignesh\software_eng\Scripts\python.exe
+#!C:\Users\Vignesh\chatapptest\Scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'pip==9.0.1','console_scripts','pip3.6'
 __requires__ = 'pip==9.0.1'
 import re

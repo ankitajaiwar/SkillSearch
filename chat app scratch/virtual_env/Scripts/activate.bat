@@ -1,5 +1,5 @@
 @echo off
-set "VIRTUAL_ENV=C:\Users\Vignesh\software_eng"
+set "VIRTUAL_ENV=C:\Users\Vignesh\chatapptest"
 
 if not defined PROMPT (
     set "PROMPT=$P$G"
@@ -14,7 +14,7 @@ if defined _OLD_VIRTUAL_PYTHONHOME (
 )
 
 set "_OLD_VIRTUAL_PROMPT=%PROMPT%"
-set "PROMPT=(software_eng) %PROMPT%"
+set "PROMPT=(chatapptest) %PROMPT%"
 
 if defined PYTHONHOME (
     set "_OLD_VIRTUAL_PYTHONHOME=%PYTHONHOME%"

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Skill_Chat</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Student Chat!</h1>
+
+    <div class="container-fluid">
+        <hr>
+        <div class="row">
+          
+          <div class = "col-sm-8">
+            <div id="nomsg">
+              <h1 style="color:grey">No messages yet!</h1>
+            </div>
+          </div>
+
+          <div class = "col-sm-4">
+            <form action="" method="POST">
+              <b> Type your message below!<span class="glyphicon glyphicon-collapse-down"></span></b>
+              <hr>
+              <div class="form-group">
+                <label for="username">User Name:</label>
+                <input type="text" class="form-control" id="username">
+              </div>
+              <div class="form-group">
+                <label for="message">Message:</label>
+                <input type="text" class="form-control" id="message">
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox"> Remember me</label>
+              </div>
+              <button type="submit" class="btn btn-success">Send <span class="glyphicon glyphicon-send"></span></button>
+            </form>
+          </div>
+
+      </div>    
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <script>
+    	var form = $( 'form' ).on( 'submit', function( e ) {
+          e.preventDefault()
+          let user_name = $( 'input.username' ).val()
+          let user_input = $( 'input.message' ).val()
+          console.log(user_name,user_input)
+      })
+    </script>
+
+
+
+  </body>
+</html>
