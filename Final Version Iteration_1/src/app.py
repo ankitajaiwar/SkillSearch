@@ -19,10 +19,7 @@ def index():
     if 'username' in session:
         username = session['username']
         return render_template('userhome.html', msg="Welcome Back! "+username)
-        # return 'Logged in as ' + username + '<br>' + \
-        #        "<b><a href = '/logout'>click here to log out</a></b>"
-    # return "You are not logged in <br><a href = '/login'></b>" + \
-    #        "click here to log in</b></a>"
+
     return render_template('index.html')
 
 @app.route('/register')
@@ -79,7 +76,8 @@ def add_skill():
     if 'username' in session:
         return render_template('addskill.html')
     else:
-        return render_template('index.html')
+        # return render_template('index.html')
+        return redirect(url_for('index'))
 
 @app.route('/skilladded', methods=['POST'])
 def skillform():
@@ -107,7 +105,7 @@ def search_people():
     if 'username' in session:
         return render_template('search.html')
     else:
-        return render_template('index.html')
+        return redirect(url_for('index'))
 
 @app.route('/skilledpeople',methods=['POST'])
 def skilled_people():
@@ -130,7 +128,8 @@ def skilled_people():
 def log_out():
     session.pop('username',None)
     message = "Log Out Successful"
-    return render_template('login.html', msg = message)
+    # return render_template('login.html', msg = message)
+    return redirect(url_for('login_button',msg = message))
 
 
 @app.before_first_request
