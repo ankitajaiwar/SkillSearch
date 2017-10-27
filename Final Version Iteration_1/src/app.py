@@ -1,6 +1,7 @@
 # Authors: Vigneshwar, Jaswanth, Ankita, Tejaswini
-
 from flask import Flask, jsonify, request, render_template, session, redirect, url_for, flash, logging
+from pymongo import response
+
 from common.database import Database
 from wtforms import Form, StringField, PasswordField, validators
 from find_people import Find_People
@@ -15,7 +16,14 @@ app.secret_key = 'skillsearch'
 
 @app.route('/')
 def index():
-        return render_template('index.html')
+    if 'username' in session:
+        username = session['username']
+        return render_template('userhome.html', msg="Welcome Back! "+username)
+        # return 'Logged in as ' + username + '<br>' + \
+        #        "<b><a href = '/logout'>click here to log out</a></b>"
+    # return "You are not logged in <br><a href = '/login'></b>" + \
+    #        "click here to log in</b></a>"
+    return render_template('index.html')
 
 @app.route('/register')
 def register_button():
@@ -27,16 +35,19 @@ def login_button():
 
 @app.route('/login_auth', methods =['POST'])
 def login_authentication():
+    user_name='somejunk'
+    pwd='somejunk'
     user_name = request.form['username']
     pwd = request.form['pwd']
-    message = ""
 
+    print(user_name,pwd)
+
+    message = ""
     if User.validateUser(user_name=user_name,pwd=pwd):
-        message = 'Log in Successful'
         fName = User.getName(username=user_name)
         session['username'] = fName
+        message = 'Log in Successful. Welcome '+fName
         return render_template('userhome.html', msg = message)
-
     else:
         message = 'Please Try Again'
         return render_template('login.html', msg = message)
@@ -62,9 +73,13 @@ def register_page():
 def user_home():
     return render_template('userhome.html')
 
+
 @app.route('/addskill')
 def add_skill():
-    return render_template('addskill.html')
+    if 'username' in session:
+        return render_template('addskill.html')
+    else:
+        return render_template('index.html')
 
 @app.route('/skilladded', methods=['POST'])
 def skillform():
@@ -89,7 +104,10 @@ def skillform():
 
 @app.route('/searchpeople')
 def search_people():
-    return render_template('search.html')
+    if 'username' in session:
+        return render_template('search.html')
+    else:
+        return render_template('index.html')
 
 @app.route('/skilledpeople',methods=['POST'])
 def skilled_people():
