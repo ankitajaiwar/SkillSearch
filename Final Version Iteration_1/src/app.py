@@ -5,6 +5,7 @@ from pymongo import response
 from common.database import Database
 from wtforms import Form, StringField, PasswordField, validators
 from find_people import Find_People
+from enlist import ListSkill
 from passlib.hash import sha256_crypt
 from datetime import datetime
 import time
@@ -71,16 +72,19 @@ def user_home():
     return render_template('userhome.html')
 
 
-@app.route('/addskill')
+@app.route('/addskill', methods = ['GET','POST'])
 def add_skill():
     if 'username' in session:
-        return render_template('addskill.html')
+        skill_list = ListSkill.list_skills()
+        # print (skill_list)
+        return render_template('addskill.html', skill_list=skill_list)
     else:
         # return render_template('index.html')
         return redirect(url_for('index'))
 
 @app.route('/skilladded', methods=['POST'])
 def skillform():
+
     skill = request.form['skills']
     newSkill = request.form['newSkill']
     message = "no message"
@@ -97,7 +101,9 @@ def skillform():
     _name = session['username']
     print(_name)
     Database.insert(collection="skillset",data={'name':_name,'skill':skillUpdate})
-    return render_template("addskill.html",msg = message)
+    skill_list = ListSkill.list_skills()
+    # print (skill_list)
+    return render_template("addskill.html",msg = message, skill_list=skill_list)
 
 
 @app.route('/searchpeople')

@@ -29,3 +29,7 @@ class Database(object):
     def removeEntry(collection_name,idName,idValue):
         Database.DATABASE[collection_name].remove({idName:idValue})
 
+    @staticmethod
+    def list_values(collection, key):
+        return Database.DATABASE[collection].find().distinct(key)
+

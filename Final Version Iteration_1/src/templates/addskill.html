@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <!-- Author: Jaswanth Garre-->
 
 <html lang="en">
@@ -47,11 +46,11 @@
 					<label>Skill:</label>
 					<input class="form-control mx-sm-3" list = "skills" name="skills" placeholder=" Choose here…">
 						<datalist id = "skills">
-							<option value = "Music"> Music </option>
-							<option value = "Art"> Art </option>
-							<option value = "Dance"> Dance </option>
-							<option value = "Programming"> Programming </option>
-							<option value = "Android"> Android app development </option>
+							<!-- <option value = "Music"> Music </option> -->
+                            {% for option_skill in skill_list %}
+                                <option value="{{ option_skill }}">{{ option_skill }}</option>
+                            {% endfor %}
+
 						</datalist>
 					</input>
 				</div>
@@ -79,5 +78,3 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   </body>
 </html>
-
-
