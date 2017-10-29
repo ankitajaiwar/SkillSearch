@@ -1,68 +1,70 @@
 <!DOCTYPE html>
 <!-- Author: Jaswanth Garre-->
 
+
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Add skill</title>
+        <title>Add skill</title>
 
-    <!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <!-- Custom styles for this template -->
-    <link href="jumbotron.css" rel="stylesheet">
-  </head>
-
-  <body>
-
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <!-- Custom styles for this template -->
+        <link href="jumbotron.css" rel="stylesheet">
+    </head>
+    <body>
     {% extends "navbar.html" %}
     {% block content %}
+        <div style = "top:80px" class="container">
+          <div class="jumbotron">
+              <h1 class="display-3">Add Skill</h1>
+              <div class="addskill_container">
+                  <br>
+                  <form id ="addskill_form" action = "/skilladded" method = "post">
+                      <p>Please find a skill to add to your profile </p>
+                      <div class = "form-group row">
+                          <label class="col-sm-2 col-form-label">Skill:</label>
+                          <div class="col-sm-4">
+                              <select style = "height:auto" class="form-control" name = "skills">
+                                  <option value = "" readonly = "readonly" selected>Choose your skill</option>
+                                  <!-- <option value = "Music"> Music </option> -->
+                                  {% for option_skill in skill_list %}
+                                  <option value="{{ option_skill }}">{{ option_skill }}</option>
+                                  {% endfor %}
+                              </select>
+                          </div>
+                      </div>
+                      <p>Not found your skill? You can add the skill by typing in the name below</p>
+                      <div class = "form-group row">
+                          <label class="col-sm-2 col-form-label">New Skill:</label>
+                          <div class="col-sm-4">
+                              <input class = "form-control"type = "text" id="newSkill" name = "newSkill" placeholder=" Type here…">
+                          </div>
+                          <!-- <input class="form-control mx-sm-1" type = "text" id="newSkill" name = "newSkill" placeholder=" Type here…"></input> -->
+                      </div>
+                      <br><input class="btn btn-lg btn-success" type = "submit" value = "Submit">
+                  </form>
+              </div>
+              <div>
+                  <br><p>{{ msg }}</p>
+              </div>
+          </div>
+        </div> <!-- /container -->
 
-    <div style = "top: 50px" class="container">
-      <div style = "margin-top:20px" class="jumbotron">
-        <h1 class="display-3">Add Skill</h1>
-        <div class="addskill_container">
-            <form id ="addskill_form" action = "/skilladded" method = "post">
-                <br><p>Please find a skill to add to your profile </p>
-			    <div class = "form-inline">
-					<label>Skill:</label>
-					<input class="form-control mx-sm-3" list = "skills" name="skills" placeholder=" Choose here…">
-						<datalist id = "skills">
-							<!-- <option value = "Music"> Music </option> -->
-                            {% for option_skill in skill_list %}
-                                <option value="{{ option_skill }}">{{ option_skill }}</option>
-                            {% endfor %}
 
-						</datalist>
-					</input>
-				</div>
-				<br><p>Not found your skill? You can add the skill by typing in the name below</p><br>
-				<div class = "form-inline">
-					<label>New Skill:</label>
-					<input class="form-control mx-sm-3" type = "text" id="newSkill" name = "newSkill" placeholder=" Type here…"></input>
-				</div>
-                <br><input class="btn btn-lg btn-success" type = "submit" value = "Submit">
-            </form>
-        </div>
-		<div>
-        <br><p>{{ msg }}</p>
-		</div>
-      </div>
-
-    </div> <!-- /container -->
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  </body>
-{% endblock %}
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    </body>
 </html>
+{% endblock %}
 
