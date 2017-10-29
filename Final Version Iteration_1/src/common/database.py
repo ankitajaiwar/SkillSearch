@@ -32,4 +32,7 @@ class Database(object):
     @staticmethod
     def list_values(collection, key):
         return Database.DATABASE[collection].find().distinct(key)
+    @staticmethod
+    def user_skill_list(collection, username, key):
+        return Database.DATABASE[collection].find({"name": username}).distinct(key)
 
