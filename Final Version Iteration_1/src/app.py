@@ -101,7 +101,11 @@ def skillform():
         
     _name = session['username']
     print(_name)
-    Database.insert(collection="skillset",data={'name':_name,'skill':skillUpdate})
+    user_skill_list = ListSkill.user_skills(_name)
+    if(skillUpdate in user_skill_list):
+        message = skillUpdate + " skill is already added."
+    else:
+        Database.insert(collection="skillset",data={'name':_name,'skill':skillUpdate})
     skill_list = ListSkill.list_skills()
     # print (skill_list)
     return render_template("addskill.html",msg = message, skill_list=skill_list)
