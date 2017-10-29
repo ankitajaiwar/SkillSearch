@@ -25,7 +25,7 @@ This Project can be run in three ways:
 ### Using Makefile:
 1. There is a rar file named software_eng.rar, extract it and open the location of extracted in CMD prompt(if Windows) or in Terminal(if Linux).
 
-2. Run the command Scripts\activate. You should see the "(software_eng)" tag on left side of cursor. 
+2. Run the command `Scripts\activate`. You should see the "(software_eng)" tag on left side of cursor. 
 
 3. Make sure you have make installed in the system and added to Environment variable PATH. 
 
@@ -35,18 +35,23 @@ Then copy the local host address mentioned at the end of the execution and paste
 ### Using CMD prompt / Terminal:(without using makefile)
 1. There is a rar file named software_eng.rar, extract it and open the location of extracted in CMD prompt(if Windows) or in Terminal(if Linux).
 
-2. Run the command Scripts\activate. You should see the "(software_eng)" tag on left side of cursor. 
+2. Run the command `Scripts\activate`. You should see the "(software_eng)" tag on left side of cursor. 
 
 3. Go into the Scripts directory.
 
-4. Run the command (without quotes) 'Final_Version_Iteration_1\src\app.py' 
+4. Run the command (without quotes) `'Final_Version_Iteration_1\src\app.py'` 
 You should the local instance address on which app is running. Something like http://127.0.0.1:4995/
 
 5. To run the two Unittests, execute below commands 
+```
 Scripts\python -m unittest Scripts\Final_Version_Iteration_1\src\test.py
 Scripts\python -m unittest Scripts\Final_Version_Iteration_1\src\test_ui.py
+```
 To teardown test data, please execute below:
+```
 Scripts\python Scripts\Final_Version_Iteration_1\src\clean.py
+```
+_(Note) Make sure to run the test.py unittes before running test_ui.py as test_ui.py uses test entries of test.py_
 
 ### Using PyCharm IDE:
 1. If you are using PyCharm IDE, Load the project files and Make src/ folder as root folder(Right click -> MakeDirectoryas >).
@@ -58,11 +63,15 @@ Scripts\python Scripts\Final_Version_Iteration_1\src\clean.py
 4. Once all libraries are installed and no squiggly lines in code, execute app.py for launching server. go to the localhost address as shown in console.
 
 5. To run unittests, run the test.py and test_ui.py. Then do clean.py for cleaning test data. 
+_(Note) Make sure to run the test.py unittes before running test_ui.py as test_ui.py uses test entries of test.py_
+
 
 
 ## Unit-test Run:
 * To run unit tests please refer above Run Instructions. 
 * (Note) The deprecation warnings on running the test_ui.py can be ignored.
+__(Note) Make sure to run the test.py unittes before running test_ui.py as test_ui.py uses test entries of test.py__
+
 
 
 ## Inputs and Outputs: (Acceptance criteria for Iteration 1)
