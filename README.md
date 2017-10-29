@@ -51,7 +51,7 @@ To teardown test data, please execute below:
 ```
 Scripts\python Scripts\Final_Version_Iteration_1\src\clean.py
 ```
-_(Note) Make sure to run the test.py unittes before running test_ui.py as test_ui.py uses test entries of test.py_
+_(Note) Make sure to run the test.py unittest before running test_ui.py as test_ui.py uses test entries of test.py_
 
 ### Using PyCharm IDE:
 1. If you are using PyCharm IDE, Load the project files and Make src/ folder as root folder(Right click -> MakeDirectoryas >).
@@ -62,15 +62,16 @@ _(Note) Make sure to run the test.py unittes before running test_ui.py as test_u
 
 4. Once all libraries are installed and no squiggly lines in code, execute app.py for launching server. go to the localhost address as shown in console.
 
-5. To run unittests, run the test.py and test_ui.py. Then do clean.py for cleaning test data. 
-_(Note) Make sure to run the test.py unittes before running test_ui.py as test_ui.py uses test entries of test.py_
+5. To run unittests, run the test.py and test_ui.py. Then do clean.py for cleaning test data.
+
+_(Note) Make sure to run the test.py unittest before running test_ui.py as test_ui.py uses test entries of test.py_
 
 
 
 ## Unit-test Run:
 * To run unit tests please refer above Run Instructions. 
 * (Note) The deprecation warnings on running the test_ui.py can be ignored.
-__(Note) Make sure to run the test.py unittes before running test_ui.py as test_ui.py uses test entries of test.py__
+__(Note) Make sure to run the test.py unittest before running test_ui.py as test_ui.py uses test entries of test.py__
 
 
 
