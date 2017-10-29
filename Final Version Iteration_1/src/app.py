@@ -82,12 +82,13 @@ def add_skill():
         # return render_template('index.html')
         return redirect(url_for('index'))
 
-@app.route('/skilladded', methods=['POST'])
+@app.route('/skilladded', methods=['GET','POST'])
 def skillform():
-
     skill = request.form['skills']
     newSkill = request.form['newSkill']
+    print (skill, newSkill)
     message = "no message"
+    skill_list = ListSkill.list_skills()
     if (skill != ""):
         skillUpdate = skill
         message = "Skills Added"
@@ -96,7 +97,7 @@ def skillform():
         message = "Skills Added"
     else:
         message = "Failed to add skills"
-        return render_template("addskill.html", msg=message)
+        return render_template("addskill.html", msg=message, skill_list=skill_list)
         
     _name = session['username']
     print(_name)
