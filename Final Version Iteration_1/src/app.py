@@ -114,26 +114,32 @@ def skillform():
 @app.route('/searchpeople')
 def search_people():
     if 'username' in session:
-        return render_template('search.html')
+        skill_list = ListSkill.list_skills()
+        return render_template('search.html',skillList=skill_list)
     else:
         return redirect(url_for('index'))
 
 @app.route('/skilledpeople',methods=['POST'])
 def skilled_people():
-    Skill = request.form['Skill']
-    s = "Skill being requested: {}"
-    print(s.format(Skill))
+    Skill = request.form.getlist('Skill')
+    print("The skills requested are:")
+    for s in Skill:
+        print(s)
 
     # Searching people in MongoDB for skill = Skill:
-    results = Find_People.search_from_mongo(skill=Skill)
     print("List of people with requested skill:")
     message = "List of people with requested skill:"
     peopleNames = []
-    for people in results:
-        peopleNames.append(people['name'])
-        print(people['name'])
 
-    return render_template("search.html", results=peopleNames, msg = message)
+    for sk in Skill:
+        results = Find_People.search_from_mongo(skill=sk)
+        for people in results:
+            peopleNames.append(people['name'])
+            print(people['name'])
+    peopleNamesDistinct = list(set(peopleNames))
+    skill_list = ListSkill.list_skills()
+    return render_template("search.html", results=peopleNamesDistinct, msg = message, skillList=skill_list,Skill=Skill)
+
 
 @app.route('/logout')
 def log_out():
