@@ -71,7 +71,7 @@ _(Note) Make sure to run the test.py unittest before running test_ui.py as test_
 ## Unit-test Run:
 * To run unit tests please refer above Run Instructions. 
 * (Note) The deprecation warnings on running the test_ui.py can be ignored.
-__(Note) Make sure to run the test.py unittest before running test_ui.py as test_ui.py uses test entries of test.py__
+* __(Note) Make sure to run the test.py unittest before running test_ui.py as test_ui.py uses test entries of test.py__
 
 
 
