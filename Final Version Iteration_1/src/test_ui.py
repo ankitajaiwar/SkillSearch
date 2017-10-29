@@ -92,17 +92,27 @@ class FrontEndTest(unittest.TestCase):
 
     """---------------------------------------tests for userhome.html---------------------------------------"""
 
-    # # ensuring addskills work correctly
-    # def test_addSkill_page_load(self):
-    #     tester = app.test_client(self)
-    #     response = tester.get('/addskill', content_type='html/text')
-    #     self.assertTrue(b"Add skill" in response.data)
-    #
-    # # ensuring searchpeople work correctly
-    # def test_searchpeople_page_load(self):
-    #     tester = app.test_client(self)
-    #     response = tester.get('/searchpeople', content_type='html/text')
-    #     self.assertTrue(b"Search people" in response.data)
+    # ensuring addskills work correctly
+    def test_addSkill_page_load(self):
+        tester = app.test_client(self)
+        tester.post(
+            '/login_auth',
+            data = dict(username = 'test_User1', pwd = 'test'),
+            follow_redirects = True
+        )
+        response = tester.get('/addskill', content_type='html/text')
+        self.assertTrue(b"Add skill" in response.data)
+
+    # ensuring searchpeople work correctly
+    def test_searchpeople_page_load(self):
+        tester = app.test_client(self)
+        tester.post(
+            '/login_auth',
+            data = dict(username = 'test_User1', pwd = 'test'),
+            follow_redirects = True
+        )
+        response = tester.get('/searchpeople', content_type='html/text')
+        self.assertTrue(b"Search people" in response.data)
 
     # checking logout page, renamed the function
     def test_logout_page1(self):
