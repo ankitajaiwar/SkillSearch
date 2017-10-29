@@ -12,3 +12,8 @@ class ListSkill(object):
     def list_skills():
         skills = Database.list_values(collection='skillset', key='skill')
         return skills
+
+    @staticmethod
+    def user_skills(username):
+        skills = Database.user_skill_list(collection='skillset', username=username, key='skill')
+        return skills
