@@ -21,7 +21,7 @@ If you are not familiar how to do this, refer this stackoverflow link => https:/
 ## Run Instructions:
 This Project can be run in three ways:
 1. Make sure there is an active MongoDB instance, irrespective of the way you are choosing below.
-(Note: No need to configure MongoDB in the app, if the mongodb settings are left default.  The defaults values are pid=9444 port=27017. If there is a custom setting, change common\database\Database.py with appropriate  settings)
+_(Note: No need to configure MongoDB in the app, if the mongodb settings are left default.  The defaults values are pid=9444 port=27017. If there is a custom setting, change common\database\Database.py with appropriate  settings)_
 
 ### Using Makefile:
 1. There is a zip file named EasyLaunch_Makefile.zip, extract it and then open the location of extracted folder in CMD prompt(if Windows) or in Terminal(if Linux).
@@ -77,7 +77,7 @@ _(Note) Make sure to run the test.py unittest before running test_ui.py as test_
 
 
 
-## Inputs and Outputs: (Acceptance criteria for Iteration 1)
+## Inputs and Outputs: (Acceptance criteria for Iteration 2)
 1. Once you see the App main page, You can click Register. (since you don't have an account yet).
 
 2. Complete Registration form and click 'Submit'. You should see a "Registered Successfully" message in next Page.  
