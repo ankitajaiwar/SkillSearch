@@ -21,46 +21,48 @@ If you are not familiar how to do this, refer this stackoverflow link => https:/
 ## Run Instructions:
 This Project can be run in three ways:
 1. Make sure there is an active MongoDB instance, irrespective of the way you are choosing below.
+(Note: No need to configure MongoDB in the app, if the mongodb settings are left default.  The defaults values are pid=9444 port=27017. If there is a custom setting, change common\database\Database.py with appropriate  settings)
 
 ### Using Makefile:
-1. There is a rar file named software_eng.rar, extract it and open the location of extracted in CMD prompt(if Windows) or in Terminal(if Linux).
+1. There is a zip file named EasyLaunch_Makefile.zip, extract it and then open the location of extracted folder in CMD prompt(if Windows) or in Terminal(if Linux).
 
 2. Run the command `Scripts\activate`. You should see the "(software_eng)" tag on left side of cursor. 
 
 3. Make sure you have make installed in the system and added to Environment variable PATH. 
 
-4. Run the command make or mingw32-make or gnu-make depending upon the kind of make you have configured in your system. This will run two unnittests first then launch the app. You should be seeing the Test results and App launch messages. 
-Then copy the local host address mentioned at the end of the execution and paste it in browser. 
+4. Run the command make or mingw32-make or gnu-make depending upon the kind of make you have configured in your system. This will run two unnittests first then launch the app. You should be seeing the Test results and App launch messages at the end of execution. 
+Then copy the local host address mentioned at the bottom and paste it in browser, to launch the app. 
 
 ### Using CMD prompt / Terminal:(without using makefile)
-1. There is a rar file named software_eng.rar, extract it and open the location of extracted in CMD prompt(if Windows) or in Terminal(if Linux).
+1. There is a zip file named EasyLaunch_Makefile.zip, extract it and open the location of extracted in CMD prompt(if Windows) or in Terminal(if Linux).
 
-2. Run the command `Scripts\activate`. You should see the "(software_eng)" tag on left side of cursor. 
+2. Go into the Scripts directory.
 
-3. Go into the Scripts directory.
+3. Run the command `activate`. You should see the "(software_eng)" tag on left side of cursor.
 
-4. Run the command (without quotes) `'Final_Version_Iteration_1\src\app.py'` 
+4. Then, run the command (without quotes) `'python Final_Version_Iteration_1\src\app.py'` 
 You should the local instance address on which app is running. Something like http://127.0.0.1:4995/
+Go to the address to access the web app. 
 
 5. To run the two Unittests, execute below commands 
 ```
-Scripts\python -m unittest Scripts\Final_Version_Iteration_1\src\test.py
-Scripts\python -m unittest Scripts\Final_Version_Iteration_1\src\test_ui.py
+python -m unittest Scripts\Final_Version_Iteration_1\src\test.py
+python -m unittest Scripts\Final_Version_Iteration_1\src\test_ui.py
 ```
 To teardown test data, please execute below:
 ```
-Scripts\python Scripts\Final_Version_Iteration_1\src\clean.py
+python Final_Version_Iteration_1\src\clean.py
 ```
 _(Note) Make sure to run the test.py unittest before running test_ui.py as test_ui.py uses test entries of test.py_
 
 ### Using PyCharm IDE:
-1. If you are using PyCharm IDE, Load the project files and Make src/ folder as root folder(Right click -> MakeDirectoryas >).
+1. If you are using PyCharm IDE, Load the project files "Iteration2_Final_Version" and Make src/ folder as root folder(Right click -> MakeDirectoryas >).
 
-2. Go to File -> Settings -> Project  Interpreter -> CLick settings icon at the rightmost -> Create a new Virtual env -> finish creating env. 
+2. Go to File -> Settings -> Project  Interpreter -> Click settings icon at the rightmost -> Create a new Virtual env -> finish creating env. 
 
 3. Install all libraries as mentioned in requirements.txt (present under Project root folder)
 
-4. Once all libraries are installed and no squiggly lines in code, execute app.py for launching server. go to the localhost address as shown in console.
+4. Once all libraries are installed and no squiggly lines in code, execute app.py to launch the server. go to the localhost address as shown in console bottom (http://127.0.0.1:4995/).
 
 5. To run unittests, run the test.py and test_ui.py. Then do clean.py for cleaning test data.
 
@@ -84,8 +86,8 @@ _(Note) Make sure to run the test.py unittest before running test_ui.py as test_
 
 4. Once you are in User-Home, click either 'Add Skills' or 'Search People'
 
-5. 'Add Skills' will redirect you to a page, where you can choose a pre-defined set of skills or choose a custome skill and click 'Submit'
+5. 'Add Skills' will redirect you to a page, where you can choose a pre-defined set of skills(drop-down) or choose a custom skill and click 'Submit'
 
-6. 'Search People' will redirect you to a page, where you can submit a skill name and get a list of people skilled on that. 
+6. 'Search People' will redirect you to a page, where you can select one or more skills and get a list of people matched with the database. 
 
-7. Once you done, you can click logout. If you dont logout, your session will be saved and maintained for future logins. 
+7. Once you done, you can click logout. If you don't logout, your session will be saved and maintained for future logins(no need repetitive logins).
