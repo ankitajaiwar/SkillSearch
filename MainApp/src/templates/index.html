@@ -1,0 +1,57 @@
+{% extends "navbar.html" %}
+{% block content %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Skill-Search Home Page</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style type="text/css">
+      body {
+        padding-top: 54px;
+      }
+      @media (min-width: 992px) {
+        body {
+          padding-top: 56px;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+
+<!-- author: Ankita Singh-->
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1 class="mt-5">SkillSearch: Find skilled people around your campus</h1>
+          <p class="lead">You are just one click away!</p>
+          <ul class="list-unstyled">
+            <form action="/register">
+                <button type="submit" class="btn btn-success">Register</button>
+            </form>
+            <br>
+            <form action="/login">
+                <button type="submit" class="btn btn-success">Log in</button>
+            </form>
+
+            <!--<li><a href = "register.html">Register</a></li>-->
+          </ul>
+        </div>
+      </div>
+
+        <p class="text-center">One stop for all your searches. Help identify and improve the skill sof every person.
+        <br>
+        Find the best to help you and help others by improving their talent.
+        <br>
+        Login/Register and get to know each other. </p>
+    </div>
+
+
+
+  </body>
+</html>
+{% endblock %}
