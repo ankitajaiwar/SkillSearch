@@ -1,4 +1,4 @@
-# Authors: Vigneshwar, Jaswanth, Ankita, Tejaswini
+# Authors: Vigneshwar, Jaswanth, Ankita, Tejaswini.
 from flask import Flask, jsonify, request, render_template, session, redirect, url_for, flash, logging
 from pymongo import response
 from common.database import Database
