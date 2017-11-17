@@ -1,0 +1,53 @@
+<!--Author: Vigneshwar-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search People</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+<h1 align="center">Search people</h1>
+
+<div class="container page-form">
+    <form id="login-form" action="/skilledpeople" method="post">
+        <div class="form-group">
+            <label for="Skill"><h3>Select the Skill(s) you are interested in:</h3></label>
+            <br>
+            <br>
+            <select id="Skill" name="Skill" multiple="multiple">
+                {% for option_skill in skillList %}
+                    <option value="{{option_skill}}">{{option_skill}}</option>
+                {% endfor %}
+            </select>
+            <p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+            <br>
+            <button type="submit" class="btn btn-success">Search People</button>
+        </div>
+    </form>
+</div>
+<div class="container">
+    <h2 style="text-align:right;float:left;font-family:Book Antiqua;"><b>{{msg}}</b>
+        {% for s in Skill %}
+        <h3 style="text-align:right;float:center;color:orange"> {{s}}; </h3>
+         {% endfor %}
+    </h2>
+    {% for p in results %}
+    <h3><i>{{ p }}</i></h3>
+    <form id="chat-form" action="/chat" method="post" target="_blank">
+        <button type="submit" style="button">IM </button>
+        <input type="hidden" id="roomname" name="roomname" value="{{ p }}">
+    </form>
+
+        <hr>
+    {% endfor %}
+</div>
+<div class="container">
+</div>
+</body>
+</html>
