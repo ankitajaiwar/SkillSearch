@@ -1,4 +1,4 @@
-# Authors: Vigneshwar, Jaswanth, Ankita, Tejaswini.
+# Authors: Vigneshwar, Jaswanth, Ankita, Tejaswini
 from flask import Flask, jsonify, request, render_template, session, redirect, url_for, flash, logging
 from pymongo import response
 from common.database import Database
@@ -20,7 +20,9 @@ socketio = SocketIO(app)
 def index():
     if 'username' in session:
         username = session['username']
-        return render_template('userhome.html', msg="Welcome Back! "+username,unname=username)
+        message = "Welcome Back! " + username
+        return redirect(url_for('user_home', message=message))
+        # return render_template('userhome.html', msg="Welcome Back! "+username,unname=username)
 
     return render_template('index.html')
 
@@ -55,7 +57,9 @@ def login_authentication():
         session['username'] = fName
         message = 'Log in Successful. Welcome '+fName
         uname = fName
-        return render_template('userhome.html', msg = message, unname=uname)
+        return redirect(url_for('user_home',message=message))
+        # return render_template('userhome.html', msg = message, unname=uname)
+
     else:
         message = 'Please Try Again'
         return render_template('login.html', msg = message)
@@ -77,9 +81,29 @@ def register_page():
 
     return render_template('regsuccess.html')
 
-@app.route('/userhome')
-def user_home():
-    return render_template('userhome.html',unname=session['username'])
+@app.route('/userhome/<message>')
+def user_home(message):
+    # For displaying skills and scores of user profile
+    print("inside User Home ****")
+    skillName = []
+    skillScore = []
+    skillRecords = Find_People.search_from_mongo2(name=session['username'])
+
+    for skillDetails in skillRecords:
+        skillName.append(skillDetails['skill'])
+        skillScore.append(skillDetails['score'])
+        # print(skillDetails['skill'])
+        # print(skillDetails['score'])
+    skillNamesDistinct = list(set(skillName))
+
+    skillItems = []
+    for skillDetails in skillRecords:
+        # dict == {}
+        # you just don't have to quote the keys
+        an_item = dict(skillName=skillDetails['skill'], skillScore=skillDetails['score'])
+        skillItems.append(an_item)
+
+    return render_template('userhome.html',unname=session['username'],msg=message,skillItems=skillItems)
 
 
 @app.route('/addskill', methods = ['GET','POST'])
@@ -115,7 +139,7 @@ def skillform():
     if(skillUpdate in user_skill_list):
         message = skillUpdate + " skill is already added."
     else:
-        Database.insert(collection="skillset",data={'name':_name,'skill':skillUpdate})
+        Database.insert(collection="skillset",data={'name':_name,'skill':skillUpdate,'score':0 })
     skill_list = ListSkill.list_skills()
     # print (skill_list)
     return render_template("addskill.html",msg = message, skill_list=skill_list)
@@ -161,7 +185,7 @@ def log_out():
 @app.route('/chat',methods=['POST'])
 def chatHandler():
     chatuser = request.form['roomname']
-    if chatuser=='':
+    if chatuser==' ':
         chatuser = session['username']
         print("Setting Roomname to default")
     print(session['username']+" requested chat to: "+ chatuser)

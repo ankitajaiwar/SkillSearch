@@ -11,7 +11,9 @@ class Find_People(object):
     def search_from_mongo(skill):
         return [data for data in Database.find(collection='skillset', query={'skill': skill})]
 
-
+    @staticmethod
+    def search_from_mongo2(name):
+        return [data for data in Database.find(collection='skillset', query={'name': name})]
 
     # def json(self):
     #     return {
