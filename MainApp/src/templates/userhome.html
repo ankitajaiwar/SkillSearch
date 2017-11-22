@@ -114,6 +114,28 @@
               <button type="submit" class="btn btn-success">Turn On Chat</button>
             </form>
             <br>
+            <!--Table to display Skills-->
+            <h3>Your Skills</h3>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                  <th width="35%">Skill</th>
+                  <th width="35%">Test</th>
+                  <th width="30%">Score</th>
+              </tr>
+              </thead>
+              <tbody>
+               <tr>
+                   {% for item in skillItems %}
+                      <td class="filterable-cell" width="35%">{{item.skillName}}</td>
+                      <td class="filterable-cell" width="35%"><button type="button">Tests</button></td>
+                      <td class="filterable-cell" width="30%">{{item.skillScore}}</td>
+                   {% endfor %}
+               </tr>
+              </tbody>
+          </table>
+
+
             <!--<form action="/logout">-->
               <!--<button type="submit"><i>logout</i></button>-->
             <!--</form>-->
