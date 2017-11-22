@@ -10,6 +10,8 @@ class User(object):
         if data is not None:
             hash = data['password']
             print(hash)
+        else:
+            return 0
         return sha256_crypt.verify(pwd, hash)
 
     @staticmethod
