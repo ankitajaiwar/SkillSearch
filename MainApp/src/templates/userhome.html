@@ -128,7 +128,12 @@
                <tr>
                    {% for item in skillItems %}
                       <td class="filterable-cell" width="35%">{{item.skillName}}</td>
-                      <td class="filterable-cell" width="35%"><button type="button">Tests</button></td>
+                      <td class="filterable-cell" width="35%">
+                          <form action="/testsuite" method="post">
+                            <button type="submit" class="btn btn-success">Tests</button>
+                            <input type="hidden" id="skName" name="skName" value="{{item.skillName}}">
+                          </form>
+                      </td>
                       <td class="filterable-cell" width="30%">{{item.skillScore}}</td>
                    {% endfor %}
                </tr>
@@ -185,7 +190,7 @@
         </div>
       </div>
     </div>
-
+  </div>
     <!-- Bootstrap core JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 

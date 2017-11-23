@@ -48,9 +48,7 @@ def login_authentication():
     pwd='somejunk'
     user_name = request.form['username']
     pwd = request.form['pwd']
-
     print(user_name,pwd)
-
     message = ""
     if User.validateUser(user_name=user_name,pwd=pwd):
         fName = User.getName(username=user_name)
@@ -59,7 +57,6 @@ def login_authentication():
         uname = fName
         return redirect(url_for('user_home',message=message))
         # return render_template('userhome.html', msg = message, unname=uname)
-
     else:
         message = 'Please Try Again'
         return render_template('login.html', msg = message)
@@ -89,12 +86,12 @@ def user_home(message):
     skillScore = []
     skillRecords = Find_People.search_from_mongo2(name=session['username'])
 
-    for skillDetails in skillRecords:
-        skillName.append(skillDetails['skill'])
-        skillScore.append(skillDetails['score'])
-        # print(skillDetails['skill'])
-        # print(skillDetails['score'])
-    skillNamesDistinct = list(set(skillName))
+    # for skillDetails in skillRecords:
+    #     skillName.append(skillDetails['skill'])
+    #     skillScore.append(skillDetails['score'])
+    #     # print(skillDetails['skill'])
+    #     # print(skillDetails['score'])
+    # skillNamesDistinct = list(set(skillName))
 
     skillItems = []
     for skillDetails in skillRecords:
@@ -102,9 +99,7 @@ def user_home(message):
         # you just don't have to quote the keys
         an_item = dict(skillName=skillDetails['skill'], skillScore=skillDetails['score'])
         skillItems.append(an_item)
-
     return render_template('userhome.html',unname=session['username'],msg=message,skillItems=skillItems)
-
 
 @app.route('/addskill', methods = ['GET','POST'])
 def add_skill():
@@ -198,10 +193,46 @@ def selfChatHandler():
     session['room'] = session['username']
     return render_template("chat.html")
 
-# @socketio.on('text')
-# def handleMessage(msg):
-#     print('Message: ' + msg)
-#     send(msg,broadcast=True)
+@app.route('/testsuite',methods=['POST'])
+def test_suite():
+    skName = request.form['skName']
+    qnRecords = Find_People.search_from_mongo3(skill=skName)
+    qItems = []
+    qnCount=0
+    for qns in qnRecords:
+        qnCount = qnCount+1
+        _item = dict(qno=qns['qno'], qn=qns['qn'],opt1=qns['opt1'],opt2=qns['opt2'],opt3=qns['opt3'],opt4=qns['opt4'])
+        qItems.append(_item)
+    if qnCount == 0:
+        return "No questions yet, please come back later :)"
+    else:
+        return render_template("test_suite.html",qItems=qItems, sk=skName, qnCount=qnCount)
+
+@app.route('/evaltest',methods=['POST'])
+def eval_test():
+    skillName = request.form['skillName']
+    qnRecords = Find_People.search_from_mongo3(skill=skillName)
+    skillCount = request.form['skillCount']
+    answers = []
+    for i in range(1,int(skillCount)+1):
+        option = request.form[str(i)]
+        print(option)
+        answers.append(option)
+    correctAnswers = []
+    for qns in qnRecords:
+        print("Correct answers")
+        print(qns['ans'])
+        correctAnswers.append(qns['ans'])
+    noOfCorrect = 0
+    for i in range(0, int(skillCount)):
+        if answers[i] == correctAnswers[i]:
+            noOfCorrect = noOfCorrect + 1
+    # noOfCorrect = set(answers) & set(correctAnswers)
+    # noOfCorrect = set(answers).intersection(correctAnswers)
+    print("The #Correct: "+str(noOfCorrect))
+    Database.update(collection="skillset", name=session['username'], skill=skillName, score=str(noOfCorrect))
+    message = "Test Complete. Score Updated"
+    return redirect(url_for('user_home', message=message))
 
 @socketio.on('text')
 def text(message):
@@ -222,6 +253,17 @@ def joined(message):
 @app.before_first_request
 def initialize_database():
     Database.initialize()
+    Database.dropCollection("testsuite")
+    testQuestions = {"skill":"Android","qno":"1","qn":"Which term corresponds to UI?","opt1":"Service","opt2":"Background","opt3":"Activity","opt4":"Thread","ans":"opt3"}
+    Database.insert(collection="testsuite", data=testQuestions)
+    testQuestions = {"skill": "Android", "qno": "2", "qn": "Which file tells aboutt he apps permissions ", "opt1": "Service file",
+     "opt2": "Broadcast file", "opt3": "Manifest", "opt4": "log file", "ans": "opt3"}
+    Database.insert(collection="testsuite", data=testQuestions)
+    testQuestions={"skill": "Java", "qno": "1", "qn": "Pick the one which is not an OOP's concept?", "opt1": "Inheritance",
+     "opt2": "Polymorphism", "opt3": "Classes", "opt4": "Integer variables", "ans": "opt4"}
+    Database.insert(collection="testsuite", data=testQuestions)
+    testQuestions = {"skill":"Java","qno":"2","qn":"Using which library you can get inputs ","opt1":"Math","opt2":"Arrays","opt3":"Scanner","opt4":"Swing","ans":"opt3"}
+    Database.insert(collection="testsuite", data=testQuestions)
 
 if __name__ == '__main__':
     socketio.run(app,port=4995,debug=True)
