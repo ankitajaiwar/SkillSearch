@@ -15,6 +15,7 @@ from flask_socketio import SocketIO, send, join_room, emit
 app = Flask(__name__)
 app.secret_key = 'skillsearch'
 socketio = SocketIO(app)
+socketio
 
 @app.route('/')
 def index():
