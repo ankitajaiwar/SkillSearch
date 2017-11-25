@@ -1,16 +1,20 @@
 <!-- author: Ankita Singh-->
+{% extends "navbar.html" %}
 
-<!DOCTYPE html>
-<html >
-<head>
-  <meta charset="UTF-8">
-  <title>SkillSearch Login Form</title>
-  <style>
+{% block content %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Login-SkillSearch</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <style>
 //@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .loginpage {
   width: 360px;
-  padding: 8% 0 0;
+  padding: 12% 0 0;
   margin: auto;
 }
 .form {
@@ -18,8 +22,9 @@
   z-index: 1;
   background: #FFFFFF;
   max-width: 360px;
-  margin: 0 auto 100px;
+  margin: 20px auto 100px;
   padding: 45px;
+  padding-top: 100px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
@@ -65,8 +70,7 @@
 }
 
 </style>
-</head>
-
+  </head>
 <body bgcolor = "#d6f5d6">
   <div class="loginpage">
   <div class="form">
@@ -79,4 +83,6 @@
     </form>
   </div>
   </div></body>
+
 </html>
+{% endblock %}
