@@ -3,6 +3,7 @@ from wtforms import Form, StringField, PasswordField, validators
 from passlib.hash import sha256_crypt
 from datetime import datetime
 import time
+import date
 
 # register
 class RegisterForm(Form):
@@ -14,4 +15,5 @@ class RegisterForm(Form):
     confirm = PasswordField('Confirm Password')
     university = StringField('University')
     department = StringField('Department')
+    
 
