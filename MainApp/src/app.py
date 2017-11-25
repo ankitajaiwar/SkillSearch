@@ -16,7 +16,6 @@ app = Flask(__name__)
 app.secret_key = 'skillsearch'
 socketio = SocketIO(app)
 
-
 @app.route('/')
 def index():
     if 'username' in session:
@@ -140,6 +139,9 @@ def skillform():
     # print (skill_list)
     return render_template("addskill.html",msg = message, skill_list=skill_list)
 
+@app.route('/searchindex')
+def sarch_index():
+    render_template("searchindex.html")
 
 @app.route('/searchpeople')
 def search_people():
@@ -147,7 +149,7 @@ def search_people():
         skill_list = ListSkill.list_skills()
         return render_template('search.html',skillList=skill_list)
     else:
-        return redirect(url_for('index'))
+        return render_template("searchindex.html")
 
 @app.route('/skilledpeople',methods=['POST'])
 def skilled_people():
