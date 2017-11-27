@@ -82,17 +82,17 @@ _(Note) Make sure to run the test.py unittest before running test_ui.py as test_
 
 2. Complete Registration form and click 'Submit'. You should see a "Registered Successfully" message in next Page.  
 
-3. From there, You can choose to go to 'User-Home' page or Try out your new credentials in 'Login-Page'
+3. From there, You can try out your new credentials in 'Login-Page'. 
 
-4. Once you are in User-Home, click either 'Add Skills' or 'Search People'
+4. Once you are in User-Home, click 'Add Skills' (Since there are no skills added yet).
 
-5. 'Add Skills' will redirect you to a page, where you can choose a pre-defined set of skills(drop-down) or choose a custom skill and click 'Submit'
+5. 'Add Skills' will redirect you to a page, where you can choose a pre-defined set of skills (The drop-down box. This will be empty initially) or choose a Custom Skill (like 'Java' or 'Android')and click 'Submit'. You will see a message 'Skills are added'. Then come back to 'Home Page'. 
 
-6. 'Search People' will redirect you to a page, where you can select one or more skills and get a list of people matched with the database. 
+6. Click 'Search People' button, it will redirect you to a page, where you can select one or more skills and get a list of people skilled in that. The list also contains "IM" button links that can be used to chat with the each user in the list.  
 
 7. 'Chat with a user'
   * One can chat with another user through the "IM"(Instant Message) button, that appears on search results under username in Search People page.
-  * To use the chat feature, the user you are looking to chat with should turn the chat ON using "Turn On Chat" button on his homepage
+  * To use the chat feature, the user you are looking to chat with should turn on chat using "Turn On Chat" button on his homepage
   * Users will be directed to a Chat Room(in a new tab), where they can have conversation.
 
 8. Once you done using the application, you can click logout on the user Home page. If you don't logout, your session will be saved and maintained for future logins(no need repetitive logins).
