@@ -40,23 +40,23 @@ Then copy the local host address mentioned at the bottom and paste it in browser
 
 3. Run the command `activate`. You should see the "(software_eng)" tag on left side of cursor.
 
-4. Then, run the command (without quotes) `'python Final_Version_Iteration_1\src\app.py'` 
+4. Then, run the command (without quotes) `'python MainApp\src\app.py'` 
 You should the local instance address on which app is running. Something like http://127.0.0.1:4995/
 Go to the address to access the web app. 
 
 5. To run the two Unittests, execute below commands 
 ```
-python -m unittest Scripts\Final_Version_Iteration_1\src\test.py
-python -m unittest Scripts\Final_Version_Iteration_1\src\test_ui.py
+python -m unittest Scripts\MainApp\src\test.py
+python -m unittest Scripts\MainApp\src\test_ui.py
 ```
 To teardown test data, please execute below:
 ```
-python Final_Version_Iteration_1\src\clean.py
+python MainApp\src\clean.py
 ```
 _(Note) Make sure to run the test.py unittest before running test_ui.py as test_ui.py uses test entries of test.py_
 
 ### Using PyCharm IDE:
-1. If you are using PyCharm IDE, Load the project files "Iteration2_Final_Version" and Make src/ folder as root folder(Right click -> MakeDirectoryas >).
+1. If you are using PyCharm IDE, Load the project files "MainApp" and Make src/ folder as root folder(Right click -> MakeDirectoryas >).
 
 2. Go to File -> Settings -> Project  Interpreter -> Click settings icon at the rightmost -> Create a new Virtual env -> finish creating env. 
 
@@ -77,7 +77,7 @@ _(Note) Make sure to run the test.py unittest before running test_ui.py as test_
 
 
 
-## Inputs and Outputs: (Acceptance criteria for Iteration 2)
+## Inputs and Outputs: (Acceptance criteria)
 1. Once you see the App main page, You can click Register. (since you don't have an account yet).
 
 2. Complete Registration form and click 'Submit'. You should see a "Registered Successfully" message in next Page.  
@@ -90,4 +90,9 @@ _(Note) Make sure to run the test.py unittest before running test_ui.py as test_
 
 6. 'Search People' will redirect you to a page, where you can select one or more skills and get a list of people matched with the database. 
 
-7. Once you done, you can click logout. If you don't logout, your session will be saved and maintained for future logins(no need repetitive logins).
+7. 'Chat with a user'
+  * One can chat with another user through the "IM"(Instant Message) button, that appears on search results under username in Search People page.
+  * To use the chat feature, the user you are looking to chat with should turn the chat ON using "Turn On Chat" button on his homepage
+  * Users will be directed to a Chat Room(in a new tab), where they can have conversation.
+
+8. Once you done using the application, you can click logout on the user Home page. If you don't logout, your session will be saved and maintained for future logins(no need repetitive logins).
