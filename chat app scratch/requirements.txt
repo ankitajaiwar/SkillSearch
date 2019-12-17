@@ -1,6 +1,6 @@
 click==6.7
 eventlet==0.21.0
-Flask==0.12.2
+Flask==1.0
 flask-socketio
 Flask-WTF==0.14.2
 greenlet==0.4.12
