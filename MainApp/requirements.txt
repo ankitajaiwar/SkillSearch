@@ -1,7 +1,7 @@
 pymongo==3.0.3
 passlib
 click==6.7
-eventlet==0.21.0
+eventlet==0.31.0
 Flask==0.12.2
 flask-socketio
 Flask-WTF==0.14.2
